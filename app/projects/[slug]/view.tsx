@@ -1,6 +1,5 @@
 "use client";
-
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
 export const ReportView: React.FC<{ slug: string }> = ({ slug }) => {
 	useEffect(() => {
