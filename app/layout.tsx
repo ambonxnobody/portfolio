@@ -1,24 +1,24 @@
-import "../global.css";
+import { Metadata } from "next";
 import { Inter } from "@next/font/google";
 import LocalFont from "@next/font/local";
-import { Metadata } from "next";
+import React from "react";
+import "../global.css";
 import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "chronark.com",
-    template: "%s | chronark.com",
+    default: "ambonxnobody.com",
+    template: "%s | ambonxnobody.com",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "Senior Web Developer of venturo.id and Freelancer",
   openGraph: {
-    title: "chronark.com",
-    description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
-    url: "https://chronark.com",
-    siteName: "chronark.com",
+    title: "ambonxnobody.com",
+    description: "Senior Web Developer of venturo.id and Freelancer",
+    url: "https://ambonxnobody.com",
+    siteName: "ambonxnobody.com",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "https://ambonxnobody.com/og.svg",
         width: 1920,
         height: 1080,
       },
@@ -38,13 +38,14 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Chronark",
+    title: "AmbonxNobody",
     card: "summary_large_image",
   },
   icons: {
-    shortcut: "/favicon.png",
+    shortcut: "/favicon.svg",
   },
 };
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -61,16 +62,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
+      <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
       <head>
         <Analytics />
       </head>
-      <body
-        className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
-          }`}
-      >
-        {children}
+      <body className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined}`}>
+      {children}
       </body>
-    </html>
+      </html>
   );
 }
